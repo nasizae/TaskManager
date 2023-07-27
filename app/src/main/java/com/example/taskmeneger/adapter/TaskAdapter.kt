@@ -1,19 +1,20 @@
-package com.example.taskmeneger.Adapter
+package com.example.taskmeneger.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.taskmeneger.databinding.ItemTaskBinding
 import com.example.taskmeneger.model.Task
+import com.google.android.gms.tasks.Tasks
 
 class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskHolder>() {
 
         private val taskList=ArrayList<Task>()
 
-    fun addTask(task: Task){
-        taskList.add(0,task)
-        notifyItemChanged(0)
+    fun addTasks(tasks: List<Task>){
+        taskList.clear()
+        taskList.addAll(tasks)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskHolder {
