@@ -16,6 +16,7 @@
         android:layout_marginBottom="18dp"
         >
         <ImageView
+            android:id="@+id/img_profile"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/profilbilde"
@@ -24,17 +25,12 @@
 
 
     <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:layout_marginHorizontal="18dp"
         android:hint="@string/name"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save"
-        android:textSize="18sp"
-        android:paddingHorizontal="26dp"
-        android:layout_marginTop="14dp"/>
+
 
 </LinearLayout>

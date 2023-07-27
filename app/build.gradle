@@ -54,4 +54,7 @@ dependencies {
 
     //circle indicator
     implementation 'me.relex:circleindicator:2.1.6'
+
+    //image picker
+ implementation 'com.github.dhaval2404:imagepicker:2.1'
 }
