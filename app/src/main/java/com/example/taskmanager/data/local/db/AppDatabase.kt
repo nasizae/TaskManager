@@ -1,8 +1,8 @@
-package com.example.taskmeneger.data.local.db
+package com.example.taskmanager.data.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.taskmeneger.model.Task
+import com.example.taskmanager.model.Task
 
 
 @Database(entities = [Task::class], version = 1)

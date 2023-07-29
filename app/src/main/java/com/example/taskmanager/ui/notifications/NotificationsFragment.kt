@@ -1,15 +1,15 @@
-package com.example.taskmeneger.ui.dashboard
+package com.example.taskmanager.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.taskmeneger.databinding.FragmentDashboardBinding
+import com.example.taskmeneger.databinding.FragmentNotificationsBinding
 
-class DashboardFragment : Fragment() {
+class NotificationsFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentNotificationsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,7 +20,8 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+
+        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

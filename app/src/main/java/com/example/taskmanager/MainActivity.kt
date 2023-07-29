@@ -1,4 +1,4 @@
-package com.example.taskmeneger
+package com.example.taskmanager
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.taskmeneger.data.local.Pref
+import com.example.taskmeneger.R
+import com.example.taskmanager.data.local.Pref
 import com.example.taskmeneger.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -24,12 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        Log.e("ololo", "onCreate: "+pref.isOnBoardingShow())
         if (!pref.isOnBoardingShow())
             navController.navigate(R.id.navigation_onBoarding)
         // Passing each menu ID as a set of Ids because each

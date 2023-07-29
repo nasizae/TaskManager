@@ -7,34 +7,34 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.taskmeneger.ui.home.HomeFragment"
+        android:name="com.example.taskmanager.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.taskmeneger.ui.dashboard.DashboardFragment"
+        android:name="com.example.taskmanager.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.taskmeneger.ui.notifications.NotificationsFragment"
+        android:name="com.example.taskmanager.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.example.taskmeneger.ui.Task.TaskFragment"
+        android:name="com.example.taskmanager.ui.task.TaskFragment"
         android:label="Task"
         tools:layout="@layout/fragment_task" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.taskmeneger.ui.profile.Profileragment"
+        android:name="com.example.taskmanager.ui.profile.Profileragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profileragment" />
     <fragment
         android:id="@+id/navigation_onBoarding"
-        android:name="com.example.taskmeneger.ui.onBoarding.OnBoardingFragment"
+        android:name="com.example.taskmanager.ui.onBoarding.OnBoardingFragment"
         android:label="@string/title_onboarding"
         tools:layout="@layout/fragment_on_boarding" />
 

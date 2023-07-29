@@ -1,8 +1,8 @@
-package com.example.taskmeneger
+package com.example.taskmanager
 
 import android.app.Application
 import androidx.room.Room
-import com.example.taskmeneger.data.local.db.AppDatabase
+import com.example.taskmanager.data.local.db.AppDatabase
 
 class App:Application() {
     override fun onCreate() {
