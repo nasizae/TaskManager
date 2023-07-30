@@ -24,13 +24,20 @@
     </androidx.cardview.widget.CardView>
 
 
-    <EditText
-        android:id="@+id/et_name"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:layout_marginHorizontal="18dp"
-        android:hint="@string/name"/>
+        android:layout_marginHorizontal="24dp"
+        android:hint="@string/name"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </LinearLayout>
