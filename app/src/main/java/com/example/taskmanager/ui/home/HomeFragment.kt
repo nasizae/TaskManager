@@ -16,13 +16,17 @@ import com.example.taskmeneger.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private val taskAdapter = TaskAdapter(this::onLongClick)
+    private val taskAdapter = TaskAdapter(this::onLongClick, this::onClickTask)
+
+    private fun onClickTask(bundle: Bundle) {
+        findNavController().navigate(R.id.taskFragment, bundle)
+    }
 
     private fun onLongClick(taskId: Int): Boolean {
         val builder = AlertDialog.Builder(this.requireContext())
         builder.setTitle(getString(R.string.delete))
         builder.setMessage(getString(R.string.question))
-        builder.setNeutralButton(getString(R.string.censel)) { _, _ ->
+        builder.setNeutralButton(getString(R.string.cancel)) { _, _ ->
         }
         builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             val list = App.database.taskDao().getAll()
@@ -59,7 +63,6 @@ class HomeFragment : Fragment() {
         }
 
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
