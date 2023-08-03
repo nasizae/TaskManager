@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782803506216",
+    "project_id": "taskmeneger-fb0a4",
+    "storage_bucket": "taskmeneger-fb0a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782803506216:android:7c1da7cb9e6a4017bc111d",
+        "android_client_info": {
+          "package_name": "com.example.taskmeneger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782803506216-42tj2vvt3keavgvfgjjfj003nqjepq3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4h2SK8bEWsubXuQZaOHB8gD1Oy6vcVHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782803506216-42tj2vvt3keavgvfgjjfj003nqjepq3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
