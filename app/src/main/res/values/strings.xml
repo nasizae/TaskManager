@@ -17,4 +17,13 @@
     <string name="question">Are you sure about this?</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
+    <string name="update">update</string>
+    <string name="input_number_phone">input number phone</string>
+    <string name="input_code">input code</string>
+    <string name="accept">Accept</string>
+    <string name="send">send</string>
+    <string name="error_credential">что то пошло не так\n</string>
+    <string name="phone">phone</string>
+    <string name="email">Email</string>
+    <string name="exit">exit</string>
 </resources>

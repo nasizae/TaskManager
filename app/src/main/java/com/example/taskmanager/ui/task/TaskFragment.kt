@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.taskmanager.App
 import com.example.taskmeneger.databinding.FragmentTaskBinding
 import com.example.taskmanager.model.Task
+import com.example.taskmeneger.R
 
 class TaskFragment : Fragment() {
 
@@ -19,7 +20,7 @@ class TaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -38,10 +39,11 @@ class TaskFragment : Fragment() {
     private fun onUpdate() {
         binding.etTitle.setText(task?.title)
         binding.etDesc.setText(task?.desc)
-        binding.btnAdd.text = "update"
+        binding.btnAdd.text = getString(R.string.update)
         binding.btnAdd.setOnClickListener {
             val data = task?.copy(
-                title = binding.etTitle.text.toString(), desc = binding.etDesc.text.toString())
+                title = binding.etTitle.text.toString(), desc = binding.etDesc.text.toString()
+            )
             App.database.taskDao().upDate(data!!)
             findNavController().navigateUp()
         }
@@ -51,14 +53,15 @@ class TaskFragment : Fragment() {
         binding.btnAdd.setOnClickListener {
             if (binding.etTitle.text.toString().isNotEmpty()) {
                 val data =
-                    Task(title = binding.etTitle.text.toString(),
-                        desc = binding.etDesc.text.toString())
+                    Task(
+                        title = binding.etTitle.text.toString(),
+                        desc = binding.etDesc.text.toString()
+                    )
                 App.database.taskDao().insert(data)
                 findNavController().navigateUp()
-            }
-            else{
-                Toast.makeText(context,"заголовок не должен быть пустым",Toast.LENGTH_LONG).show()
-                binding.etTitle.error="null"
+            } else {
+                Toast.makeText(context, "заголовок не должен быть пустым", Toast.LENGTH_LONG).show()
+                binding.etTitle.error = "null"
                 return@setOnClickListener
             }
         }

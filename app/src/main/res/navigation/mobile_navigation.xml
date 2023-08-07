@@ -37,5 +37,20 @@
         android:name="com.example.taskmanager.ui.onBoarding.OnBoardingFragment"
         android:label="@string/title_onboarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.taskmanager.ui.auth.phone.PhoneFragment"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" />
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.example.taskmanager.ui.auth.verify.VerifyFragment"
+        android:label="fragment_verify"
+        tools:layout="@layout/fragment_verify" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.taskmanager.ui.auth.mainReg.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
 
 </navigation>
