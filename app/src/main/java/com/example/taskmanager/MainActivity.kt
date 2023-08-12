@@ -1,6 +1,7 @@
 package com.example.taskmanager
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
@@ -12,6 +13,7 @@ import com.example.taskmeneger.R
 import com.example.taskmeneger.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,9 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            Log.e("ololo", "onMessageReceived: " + it)
+        }
+
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
@@ -34,31 +40,30 @@ class MainActivity : AppCompatActivity() {
         if (FirebaseAuth.getInstance().currentUser?.uid == null) {
             navController.navigate(R.id.registrationFragment)
         }
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_dashboard,
                 R.id.navigation_notifications,
-                R.id.navigation_profile,
                 R.id.taskFragment,
-                R.id.navigation_onBoarding,
-                R.id.registrationFragment
+                R.id.navigation_profile,
+                R.id.registrationFragment,
             )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val fragmentWithOutBottomNav = setOf(
+        val fragmentWithoutButtonNav = setOf(
             R.id.navigation_onBoarding,
             R.id.phoneFragment,
             R.id.verifyFragment,
-            R.id.registrationFragment,
+            R.id.registrationFragment
         )
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (fragmentWithOutBottomNav.contains(destination.id)) {
+            if (fragmentWithoutButtonNav.contains(destination.id)) {
                 navView.isVisible = false
                 supportActionBar?.hide()
             } else {
@@ -66,6 +71,5 @@ class MainActivity : AppCompatActivity() {
                 supportActionBar?.show()
             }
         }
-
     }
 }

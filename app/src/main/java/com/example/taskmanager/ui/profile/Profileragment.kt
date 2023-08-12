@@ -1,9 +1,7 @@
 package com.example.taskmanager.ui.profile
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +10,15 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.taskmeneger.R
 import com.example.taskmanager.data.local.Pref
+import com.example.taskmeneger.R
 import com.example.taskmeneger.databinding.FragmentProfileragmentBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+
 
 class Profileragment : Fragment() {
 
@@ -77,6 +77,7 @@ class Profileragment : Fragment() {
                                 "You are signed out of your Google account",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            findNavController().navigate(R.id.registrationFragment)
                         }
                         .setNegativeButton("No") { dialog, _ -> dialog?.dismiss() }.create().show()
                 } else {
